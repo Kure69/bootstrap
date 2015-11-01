@@ -22,6 +22,8 @@
 
     // WebKit CSS3 transforms for supported devices
     @media all and (transform-3d), (-webkit-transform-3d) {
+      -webkit-transition: -webkit-transform .6s ease-in-out;
+      -o-transition:      -o-transform .6s ease-in-out;
       transition: transform .6s ease-in-out;
       backface-visibility: hidden;
       perspective: 1000px;
@@ -29,17 +31,20 @@
       &.next,
       &.active.right {
         left: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
         transform: translate3d(100%, 0, 0);
       }
       &.prev,
       &.active.left {
         left: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
       }
       &.next.left,
       &.prev.right,
       &.active {
         left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
       }
     }
